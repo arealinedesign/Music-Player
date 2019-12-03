@@ -25,6 +25,7 @@ window.addEventListener("load", () => {
   );
   const controlBox = document.querySelector(".section .player .control-box");
   const playerBackground = document.querySelector(".section .player .bg-image");
+  const playerBackgroundColor = document.querySelector(".section .player");
   const nextPreBox = document.querySelector(
     ".section .player .whole-box .next-pre"
   );
@@ -168,6 +169,7 @@ window.addEventListener("load", () => {
     menuSvg2.style.fill = colors[index % 3];
     menuSvg3.style.fill = colors[index % 3];
     nextPreBox.style.backgroundColor = colors[index % 3];
+    playerBackgroundColor.style.background = colors[index % 3];
     playerBackground.style.backgroundImage = backImage[index];
     playerBackground.style.backgroundRepeat = "no-repeat";
     playerBackground.style.backgroundSize = "cover";
