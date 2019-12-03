@@ -10,8 +10,12 @@ window.addEventListener("load", () => {
   const menuSvg1 = document.querySelector(".section .menu svg  #Rectangle4");
   const menuSvg2 = document.querySelector(".section .menu svg  #Rectangle5");
   const menuSvg3 = document.querySelector(".section .menu svg  #Rectangle6");
+  const seekBar = document.querySelector(".section .player .seek-bar");
   const seekBarFill = document.querySelector(
     ".section .player .seek-bar .fill"
+  );
+  const seekBarhandle = document.querySelector(
+    ".section .player .seek-bar .handle"
   );
   const prev = document.querySelector(
     ".section .player .whole-box .next-pre .prev"
@@ -39,7 +43,7 @@ window.addEventListener("load", () => {
   selectMusic.forEach((a, index) => {
     a.addEventListener("click", function() {
       if (firstPlay == -99) {
-        var myVar = setInterval(myTimer, 1000);
+        var myVar = setInterval(myTimer, 1);
         currentSong = index;
         musics[index].play();
         changeColor(index);
@@ -81,6 +85,8 @@ window.addEventListener("load", () => {
       playerDiv.style.transition = "0.5s ease";
       playerDiv.style.width = "100%";
       menu.style.left = "1rem";
+      controlBox.style.width = "300px";
+      seekBar.style.width = "80%";
       menuClick++;
     } else {
       selectorDev.style.width = "30%";
@@ -89,6 +95,8 @@ window.addEventListener("load", () => {
       selectorDev.style.opacity = "1";
       playerDiv.style.width = "70%";
       menu.style.left = "32%";
+      seekBar.style.width = "56%";
+      controlBox.style.width = "250px";
       menuClick++;
     }
   });
@@ -152,6 +160,8 @@ window.addEventListener("load", () => {
   }
 
   const changeColor = index => {
+    seekBarFill.style.backgroundColor = colors[index % 3];
+    seekBarhandle.style.backgroundColor = colors[index % 3];
     selectMusic[currentSong].style.backgroundColor = colors[index % 3];
     controlBox.style.backgroundColor = colors[index % 3];
     menuSvg1.style.fill = colors[index % 3];
@@ -161,6 +171,6 @@ window.addEventListener("load", () => {
     playerBackground.style.backgroundImage = backImage[index];
     playerBackground.style.backgroundRepeat = "no-repeat";
     playerBackground.style.backgroundSize = "cover";
-    playerBackground.style.filter = "blur(7px)";
+    playerBackground.style.filter = "blur(12px)";
   };
 });
