@@ -9,7 +9,6 @@ body {
 }
 
 h4 {
-  height: 2rem;
   text-decoration: none;
   cursor: pointer;
   padding-top: 0.3rem;
@@ -23,6 +22,11 @@ h1 {
 .section .music-selector .nav {
   background: black;
   height: 50px;
+}
+
+.section .music-selector .music-list {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .section .music-selector .blue:hover {
