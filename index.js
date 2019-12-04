@@ -48,7 +48,7 @@ window.addEventListener("load", () => {
         currentSong = index;
         musics[index].play();
         changeColor(index);
-        firstPlay++;
+        firstPlay = firstPlay + 1;
       } else {
         if (currentSong == index) {
           selectMusic[currentSong].style.backgroundColor = "";
@@ -71,7 +71,9 @@ window.addEventListener("load", () => {
   });
 
   play.addEventListener("click", function() {
-    musics[currentSong].play();
+    if (firstPlay > -99) {
+      musics[currentSong].play();
+    }
   });
 
   stop.addEventListener("click", function() {
@@ -134,16 +136,27 @@ window.addEventListener("load", () => {
     }
   });
 
+  seekBar.addEventListener("click", function(e) {
+    var rect = e.target.getBoundingClientRect();
+    var hoho = e.srcElement.className;
+    if (hoho == "handle") {
+    } else {
+      var x = e.clientX - rect.left;
+      var widthOfW = seekBar.offsetWidth;
+      seekBarFill.style.width = (x / widthOfW) * 100 + "%";
+      if (firstPlay > -99) {
+        musics[currentSong].currentTime =
+          (x / widthOfW) * musics[currentSong].duration;
+      }
+    }
+  });
+
   function myTimer() {
     var position =
       musics[currentSong].currentTime / musics[currentSong].duration;
     seekBarFill.style.width = position * 100 + "%";
 
-    // If the count down is over, write some text
     if (musics[currentSong].currentTime == musics[currentSong].duration) {
-      //clearInterval(x);
-      //seekBarFill.style.width = position * 100 + "%";
-
       if (musics.length - 1 <= currentSong) {
         selectMusic[currentSong].style.backgroundColor = "";
         musics[currentSong].load();
