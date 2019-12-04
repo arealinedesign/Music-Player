@@ -171,6 +171,7 @@ window.addEventListener("load", () => {
     nextPreBox.style.backgroundColor = colors[index % 3];
     playerBackgroundColor.style.background = colors[index % 3];
     playerBackground.style.backgroundImage = backImage[index];
+    playerBackground.style.transition = "1s ease";
     playerBackground.style.backgroundRepeat = "no-repeat";
     playerBackground.style.backgroundSize = "cover";
     playerBackground.style.filter = "blur(12px)";
