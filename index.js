@@ -93,11 +93,11 @@ window.addEventListener("load", () => {
       seekBar.style.width = "80%";
       menuClick++;
     } else {
-      selectorDev.style.width = "40%";
+      selectorDev.style.width = "30%";
       selectorDev.style.transition = "0.5s ease";
       playerDiv.style.transition = "0.5s ease";
       selectorDev.style.opacity = "1";
-      playerDiv.style.width = "60%";
+      playerDiv.style.width = "70%";
       menu.style.left = "32%";
       seekBar.style.width = "56%";
       controlBox.style.width = "250px";
