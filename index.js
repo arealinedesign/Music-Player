@@ -34,7 +34,8 @@ window.addEventListener("load", () => {
     "url('images//Filhall-Ft.-Akshay-Kumar.jpg')",
     "url('images//10000hours.jpg')",
     "url('images//channa.JPG')",
-    "url('images//fromFacebook1.jpg')"
+    "url('images//fromFacebook1.jpg')",
+    "url('images//jo-tu-na-mila.jpg')"
   ];
   var currentSong;
   let firstPlay = -99;
