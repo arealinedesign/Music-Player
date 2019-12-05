@@ -1,4 +1,4 @@
-@import url("font.css");
+@import url("../CSS/font.css");
 
 * {
   margin: 0;
@@ -78,6 +78,11 @@ h1 {
     rgba(67, 9, 121, 1) 50%,
     rgba(218, 0, 255, 1) 100%
   );
+}
+
+#analyzer_render {
+  width: 250px;
+  position: absolute;
 }
 
 .section .player .seek-bar {
