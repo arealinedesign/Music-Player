@@ -45,7 +45,7 @@ window.addEventListener("load", () => {
   selectMusic.forEach((a, index) => {
     a.addEventListener("click", function() {
       if (firstPlay == -99) {
-        var myVar = setInterval(myTimer, 1);
+        var myVar = setInterval(myTimer, 1000);
         currentSong = index;
         musics[index].play();
         changeColor(index);
