@@ -36,7 +36,7 @@ window.addEventListener("load", () => {
     "url('images//channa.JPG')",
     "url('images//fromFacebook1.jpg')",
     "url('images//jo-tu-na-mila.jpg')",
-    "url('images//premeImage.jpeg')"
+    "url('images//preme-image.jpg')"
   ];
   var currentSong;
   let firstPlay = -99;
